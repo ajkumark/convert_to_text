@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+	<form action="" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<input type="file" name="file_name">
+		<button class="btn btn-primary">Upload</button>
+	</form>
+	{% if data %}
+	<div class="well col-lg-12">
+		{{ data }}
+	</div>
+	{% endif %}
+{% endblock %}
